@@ -1,0 +1,37 @@
+[project]
+name = "documind-ai"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.12,<3.13"
+dependencies = [
+    "langchain>=1.3.15",
+    "langchain-community>=0.4.2",
+    "langchain-groq>=1.1.3",
+    "pypdf>=6.15.0",
+    "python-dotenv>=1.2.2",
+    "sentence-transformers>=5.7.0",
+    "streamlit>=1.61.1",
+    "transformers>=5.15.0",
+    "torch==2.12.1",
+    "torchvision==0.27.1",
+    "chromadb>=1.5.9",
+    "pytesseract>=0.3.13",
+    "pillow>=12.3.0",
+    "pymupdf>=1.28.2",
+    "datasets>=5.0.1",
+    "scikit-learn>=1.9.0",
+    "langchain-text-splitters>=1.1.2",
+    "langchain-huggingface>=1.2.2",
+    "langchain-chroma>=1.1.0",
+    "pandas>=3.0.5",
+    "matplotlib>=3.11.1",
+]
+[[tool.uv.index]]
+name = "pytorch"
+url = "https://download.pytorch.org/whl/cu130"
+explicit = true
+
+[tool.uv.sources]
+torch = { index = "pytorch" }
+torchvision = { index = "pytorch" }

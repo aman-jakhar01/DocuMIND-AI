@@ -1,0 +1,26 @@
+DocuMind AI — ResNet18 V2
+
+Accuracy: 89.82%
+
+                        precision    recall  f1-score   support
+
+                letter     0.8028    0.9194    0.8571        62
+                  form     0.8571    0.8710    0.8640        62
+                 email     0.9831    0.9355    0.9587        62
+           handwritten     1.0000    0.9677    0.9836        62
+         advertisement     0.9649    0.8871    0.9244        62
+     scientific report     0.7222    0.8387    0.7761        62
+scientific publication     0.9048    0.9194    0.9120        62
+         specification     1.0000    0.9194    0.9580        62
+           file folder     0.9667    0.9355    0.9508        62
+          news article     0.9310    0.8710    0.9000        62
+                budget     0.8793    0.8226    0.8500        62
+               invoice     0.9508    0.9355    0.9431        62
+          presentation     0.6824    0.9355    0.7891        62
+         questionnaire     0.9286    0.8387    0.8814        62
+                resume     0.9828    0.9194    0.9500        62
+                  memo     0.9815    0.8548    0.9138        62
+
+              accuracy                         0.8982       992
+             macro avg     0.9086    0.8982    0.9008       992
+          weighted avg     0.9086    0.8982    0.9008       992
