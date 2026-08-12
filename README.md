@@ -1,145 +1,158 @@
-::: {align="center"}<img src="assets/banner.png" alt="DocuMind AI Banner" width="100%">{=html}
+::: {align="center"}
+`<img src="assets/banner.png" alt="DocuMind AI Banner" width="100%">`{=html}
 
+```{=html}
 <h1>
-
+```
 🧠 DocuMind AI
-
+```{=html}
 </h1>
-
+```
+```{=html}
 <p>
-
-<strong>{=html}Intelligent Document Analysis Platform powered by DeepLearning, OCR, RAG and Groq</strong>{=html}
-
+```
+`<strong>`{=html}Intelligent Document Analysis Platform powered by Deep
+Learning, OCR, RAG and Groq`</strong>`{=html}
+```{=html}
 </p>
-
+```
+```{=html}
 <p>
-
-<img src="https://img.shields.io/badge/Python-3.12-blue?style=for-the-badge&logo=python" alt="Python">{=html}<img src="https://img.shields.io/badge/PyTorch-2.12.1-ee4c2c?style=for-the-badge&logo=pytorch" alt="PyTorch">{=html}<img src="https://img.shields.io/badge/CUDA-13.0-76b900?style=for-the-badge&logo=nvidia" alt="CUDA">{=html}<img src="https://img.shields.io/badge/RAG-Chroma-purple?style=for-the-badge" alt="RAG">{=html}<img src="https://img.shields.io/badge/Groq-LLM-orange?style=for-the-badge" alt="Groq">{=html}<img src="https://img.shields.io/badge/Streamlit-1.61-red?style=for-the-badge&logo=streamlit" alt="Streamlit">{=html}
-
+```
+`<img src="https://img.shields.io/badge/Python-3.12-blue?style=for-the-badge&logo=python" alt="Python">`{=html}
+`<img src="https://img.shields.io/badge/PyTorch-2.12.1-ee4c2c?style=for-the-badge&logo=pytorch" alt="PyTorch">`{=html}
+`<img src="https://img.shields.io/badge/CUDA-13.0-76b900?style=for-the-badge&logo=nvidia" alt="CUDA">`{=html}
+`<img src="https://img.shields.io/badge/RAG-Chroma-purple?style=for-the-badge" alt="RAG">`{=html}
+`<img src="https://img.shields.io/badge/Groq-LLM-orange?style=for-the-badge" alt="Groq">`{=html}
+`<img src="https://img.shields.io/badge/Streamlit-1.61-red?style=for-the-badge&logo=streamlit" alt="Streamlit">`{=html}
+```{=html}
 </p>
-
+```
+```{=html}
 <p>
-
-<strong>{=html}16 Document Classes</strong>{=html}  • <strong>{=html}89.82% Accuracy</strong>{=html}  • <strong>{=html}90.08% Macro F1</strong>{=html}
-
+```
+`<strong>`{=html}16 Document Classes`</strong>`{=html}  • 
+`<strong>`{=html}89.82% Accuracy`</strong>`{=html}  • 
+`<strong>`{=html}90.08% Macro F1`</strong>`{=html}
+```{=html}
 </p>
-
+```
 :::
 
-📌 Overview
+------------------------------------------------------------------------
 
-DocuMind AI is an end-to-end document intelligence platform thatcombines deep learning, OCR, semantic search, Retrieval-AugmentedGeneration (RAG), and LLMs to analyze documents intelligently.
+## 📌 Overview
+
+**DocuMind AI** is an end-to-end document intelligence platform that
+combines **deep learning, OCR, semantic search, Retrieval-Augmented
+Generation (RAG), and LLMs** to analyze documents intelligently.
 
 The platform can:
 
-📄 Upload and process PDF documents
+-   📄 Upload and process PDF documents
+-   🧠 Classify documents into 16 categories using a fine-tuned
+    **ResNet18**
+-   🔢 Return top-3 document predictions with confidence scores
+-   👁️ Extract text using OCR
+-   🔎 Convert document text into embeddings and perform semantic
+    retrieval
+-   🤖 Generate document summaries using **Groq LLMs**
+-   💬 Answer questions using document-grounded RAG
+-   🗄️ Store processing history in SQLite
+-   📊 Display document analytics through Streamlit
 
-🧠 Classify documents into 16 categories using a fine-tunedResNet18
+------------------------------------------------------------------------
 
-🔢 Return top-3 document predictions with confidence scores
+## ✨ Features
 
-👁️ Extract text using OCR
-
-🔎 Convert document text into embeddings and perform semanticretrieval
-
-🤖 Generate document summaries using Groq LLMs
-
-💬 Answer questions using document-grounded RAG
-
-🗄️ Store processing history in SQLite
-
-📊 Display document analytics through Streamlit
-
-✨ Features
-
+```{=html}
 <table>
-
+```
+```{=html}
 <tr>
-
+```
+```{=html}
 <td width="50%">
+```
+### 🧠 Deep Learning
 
-🧠 Deep Learning
+-   ResNet18 transfer learning
+-   16 document categories
+-   CUDA GPU acceleration
+-   Top-3 predictions
+-   Confidence-aware classification
+-   Model evaluation with precision, recall and F1
 
-ResNet18 transfer learning
-
-16 document categories
-
-CUDA GPU acceleration
-
-Top-3 predictions
-
-Confidence-aware classification
-
-Model evaluation with precision, recall and F1
-
+```{=html}
 </td>
-
+```
+```{=html}
 <td width="50%">
+```
+### 🤖 Generative AI
 
-🤖 Generative AI
+-   OCR text extraction
+-   Sentence-transformer embeddings
+-   Chroma vector database
+-   Retrieval-Augmented Generation
+-   Groq-powered document Q&A
+-   AI document summarization
 
-OCR text extraction
-
-Sentence-transformer embeddings
-
-Chroma vector database
-
-Retrieval-Augmented Generation
-
-Groq-powered document Q&A
-
-AI document summarization
-
+```{=html}
 </td>
-
+```
+```{=html}
 </tr>
-
+```
+```{=html}
 <tr>
-
+```
+```{=html}
 <td width="50%">
+```
+### 📊 Analytics
 
-📊 Analytics
+-   SQLite document history
+-   Total documents processed
+-   Average confidence
+-   Processing time
+-   Document-type distribution
+-   Processing history table
 
-SQLite document history
-
-Total documents processed
-
-Average confidence
-
-Processing time
-
-Document-type distribution
-
-Processing history table
-
+```{=html}
 </td>
-
+```
+```{=html}
 <td width="50%">
+```
+### 🖥️ Application
 
-🖥️ Application
+-   Streamlit interface
+-   PDF upload
+-   Real-time processing
+-   GPU inference
+-   Error handling
+-   Modular Python architecture
 
-Streamlit interface
-
-PDF upload
-
-Real-time processing
-
-GPU inference
-
-Error handling
-
-Modular Python architecture
-
+```{=html}
 </td>
-
+```
+```{=html}
 </tr>
-
+```
+```{=html}
 </table>
+```
 
-🏗️ System Architecture
+------------------------------------------------------------------------
 
-::: {align="center"}<img src="assets/architecture.png" alt="DocuMind AI Architecture" width="90%">{=html}:::
+## 🏗️ System Architecture
 
+::: {align="center"}
+`<img src="assets/architecture.png" alt="DocuMind AI Architecture" width="90%">`{=html}
+:::
+
+``` text
                          ┌─────────────────────┐
                          │     PDF Upload      │
                          └──────────┬──────────┘
@@ -196,198 +209,273 @@ Modular Python architecture
                          ┌─────────────────────┐
                          │ Streamlit Dashboard │
                          └─────────────────────┘
+```
 
-📂 Supported Document Categories
+------------------------------------------------------------------------
 
-The classifier recognizes 16 document categories:
+## 📂 Supported Document Categories
 
-\# Category
+The classifier recognizes **16 document categories**:
 
- 1 Letter
- 2 Form
- 3 Email
- 4 Handwritten
- 5 Advertisement
- 6 Scientific Report
- 7 Scientific Publication
- 8 Specification
- 9 File Folder
-10 News Article
-11 Budget
-12 Invoice
-13 Presentation
-14 Questionnaire
-15 Resume
-16 Memo
+    \# Category
+  ---- ------------------------
+     1 Letter
+     2 Form
+     3 Email
+     4 Handwritten
+     5 Advertisement
+     6 Scientific Report
+     7 Scientific Publication
+     8 Specification
+     9 File Folder
+    10 News Article
+    11 Budget
+    12 Invoice
+    13 Presentation
+    14 Questionnaire
+    15 Resume
+    16 Memo
 
-🧠 Deep Learning Model
+------------------------------------------------------------------------
 
-DocuMind uses ResNet18 transfer learning for document imageclassification.
+## 🧠 Deep Learning Model
 
-Training improvements
+DocuMind uses **ResNet18 transfer learning** for document image
+classification.
+
+### Training improvements
 
 The V2 model was improved over the original baseline using:
 
-Data augmentation
+-   Data augmentation
+-   Random resized cropping
+-   Random rotation
+-   Brightness/contrast augmentation
+-   Dropout
+-   Label smoothing
+-   AdamW optimizer
+-   Weight decay
+-   Cosine learning-rate scheduling
+-   Best-validation-model checkpointing
 
-Random resized cropping
+### V1 → V2 improvement
 
-Random rotation
+  Metric                    V1             V2
+  ----------------- ---------- --------------
+  Architecture        ResNet18       ResNet18
+  Training images        8,000          8,000
+  Epochs                     3              5
+  Accuracy              84.07%     **89.82%**
+  Improvement              ---   **+5.75 pp**
 
-Brightness/contrast augmentation
+------------------------------------------------------------------------
 
-Dropout
-
-Label smoothing
-
-AdamW optimizer
-
-Weight decay
-
-Cosine learning-rate scheduling
-
-Best-validation-model checkpointing
-
-V1 → V2 improvement
-
-Metric                    V1             V2
-
-Architecture        ResNet18       ResNet18Training images        8,000          8,000Epochs                     3              5Accuracy              84.07%     89.82%Improvement              ---   +5.75 pp
-
-📈 Model Evaluation
+## 📈 Model Evaluation
 
 The V2 model achieved:
 
 ::: {align="center"}
-
+```{=html}
 <table>
-
+```
+```{=html}
 <tr>
-
+```
+```{=html}
 <th>
-
+```
 Metric
-
+```{=html}
 </th>
-
+```
+```{=html}
 <th>
-
+```
 Score
-
+```{=html}
 </th>
-
+```
+```{=html}
 </tr>
-
+```
+```{=html}
 <tr>
-
+```
+```{=html}
 <td>
-
-<strong>{=html}Accuracy</strong>{=html}
-
+```
+`<strong>`{=html}Accuracy`</strong>`{=html}
+```{=html}
 </td>
-
+```
+```{=html}
 <td>
-
-<strong>{=html}89.82%</strong>{=html}
-
+```
+`<strong>`{=html}89.82%`</strong>`{=html}
+```{=html}
 </td>
-
+```
+```{=html}
 </tr>
-
+```
+```{=html}
 <tr>
-
+```
+```{=html}
 <td>
-
+```
 Macro Precision
-
+```{=html}
 </td>
-
+```
+```{=html}
 <td>
-
+```
 90.86%
-
+```{=html}
 </td>
-
+```
+```{=html}
 </tr>
-
+```
+```{=html}
 <tr>
-
+```
+```{=html}
 <td>
-
+```
 Macro Recall
-
+```{=html}
 </td>
-
+```
+```{=html}
 <td>
-
+```
 89.82%
-
+```{=html}
 </td>
-
+```
+```{=html}
 </tr>
-
+```
+```{=html}
 <tr>
-
+```
+```{=html}
 <td>
-
+```
 Macro F1
-
+```{=html}
 </td>
-
+```
+```{=html}
 <td>
-
-<strong>{=html}90.08%</strong>{=html}
-
+```
+`<strong>`{=html}90.08%`</strong>`{=html}
+```{=html}
 </td>
-
+```
+```{=html}
 </tr>
-
+```
+```{=html}
 </table>
-
+```
 :::
 
-Classification Performance
+### Classification Performance
 
-Document Class             Precision   Recall   F1-Score
+  Document Class             Precision   Recall   F1-Score
+  ------------------------ ----------- -------- ----------
+  Letter                        80.28%   91.94%     85.71%
+  Form                          85.71%   87.10%     86.40%
+  Email                         98.31%   93.55%     95.87%
+  Handwritten                  100.00%   96.77%     98.36%
+  Advertisement                 96.49%   88.71%     92.44%
+  Scientific Report             72.22%   83.87%     77.61%
+  Scientific Publication        90.48%   91.94%     91.20%
+  Specification                100.00%   91.94%     95.80%
+  File Folder                   96.67%   93.55%     95.08%
+  News Article                  93.10%   87.10%     90.00%
+  Budget                        87.93%   82.26%     85.00%
+  Invoice                       95.08%   93.55%     94.31%
+  Presentation                  68.24%   93.55%     78.91%
+  Questionnaire                 92.86%   83.87%     88.14%
+  Resume                        98.28%   91.94%     95.00%
+  Memo                          98.15%   85.48%     91.38%
 
-Letter                        80.28%   91.94%     85.71%Form                          85.71%   87.10%     86.40%Email                         98.31%   93.55%     95.87%Handwritten                  100.00%   96.77%     98.36%Advertisement                 96.49%   88.71%     92.44%Scientific Report             72.22%   83.87%     77.61%Scientific Publication        90.48%   91.94%     91.20%Specification                100.00%   91.94%     95.80%File Folder                   96.67%   93.55%     95.08%News Article                  93.10%   87.10%     90.00%Budget                        87.93%   82.26%     85.00%Invoice                       95.08%   93.55%     94.31%Presentation                  68.24%   93.55%     78.91%Questionnaire                 92.86%   83.87%     88.14%Resume                        98.28%   91.94%     95.00%Memo                          98.15%   85.48%     91.38%
+### Confusion Matrix
 
-Confusion Matrix
+::: {align="center"}
+`<img src="models/evaluation/confusion_matrix.png" alt="DocuMind AI Confusion Matrix" width="90%">`{=html}
+:::
 
-::: {align="center"}<img src="models/evaluation/confusion_matrix.png" alt="DocuMind AI Confusion Matrix" width="90%">{=html}:::
+------------------------------------------------------------------------
 
-🖥️ Application Screenshots
+## 🖥️ Application Screenshots
 
-Main Dashboard
+### Main Dashboard
 
-::: {align="center"}<img src="assets/screenshots/dashboard.png" alt="DocuMind AI Dashboard" width="90%">{=html}:::
+::: {align="center"}
+`<img src="assets/screenshots/dashboard.png" alt="DocuMind AI Dashboard" width="90%">`{=html}
+:::
 
-Document Classification
+### Document Classification
 
-::: {align="center"}<img src="assets/screenshots/classification.png" alt="Document Classification" width="90%">{=html}:::
+::: {align="center"}
+`<img src="assets/screenshots/classification.png" alt="Document Classification" width="90%">`{=html}
+:::
 
-OCR + AI Analysis
+### OCR + AI Analysis
 
-::: {align="center"}<img src="assets/screenshots/analysis.png" alt="OCR and AI Analysis" width="90%">{=html}:::
+::: {align="center"}
+`<img src="assets/screenshots/analysis.png" alt="OCR and AI Analysis" width="90%">`{=html}
+:::
 
-Document Q&A
+### Document Q&A
 
-::: {align="center"}<img src="assets/screenshots/qa.png" alt="Document Q&A" width="90%">{=html}:::
+::: {align="center"}
+`<img src="assets/screenshots/qa.png" alt="Document Q&A" width="90%">`{=html}
+:::
 
-Analytics Dashboard
+### Analytics Dashboard
 
-::: {align="center"}<img src="assets/screenshots/analytics.png" alt="DocuMind Analytics" width="90%">{=html}:::
+::: {align="center"}
+`<img src="assets/screenshots/analytics.png" alt="DocuMind Analytics" width="90%">`{=html}
+:::
 
-Screenshot setup: Place your images in assets/screenshots/ usingthe filenames above. If you use different filenames, simply update thecorresponding <img src="..."> paths.
+> **Screenshot setup:** Place your images in `assets/screenshots/` using
+> the filenames above. If you use different filenames, simply update the
+> corresponding `<img src="...">` paths.
 
-🛠️ Tech Stack
+------------------------------------------------------------------------
 
-Technology              Purpose
+## 🛠️ Tech Stack
 
-Python                  Core developmentPyTorch                 Deep learningResNet18                Document classificationCUDA                    GPU accelerationPyMuPDF                 PDF processingTesseract OCR           Text extractionTransformers            Text embeddingsSentence Transformers   Semantic embeddingsChroma                  Vector databaseRAG                     Context-aware retrievalGroq                    LLM inferenceLangChain               LLM/RAG integrationSQLite                  Persistent analytics/historyStreamlit               Web applicationuv                      Python environment/package managementGit/GitHub              Version control
+  Technology              Purpose
+  ----------------------- ---------------------------------------
+  Python                  Core development
+  PyTorch                 Deep learning
+  ResNet18                Document classification
+  CUDA                    GPU acceleration
+  PyMuPDF                 PDF processing
+  Tesseract OCR           Text extraction
+  Transformers            Text embeddings
+  Sentence Transformers   Semantic embeddings
+  Chroma                  Vector database
+  RAG                     Context-aware retrieval
+  Groq                    LLM inference
+  LangChain               LLM/RAG integration
+  SQLite                  Persistent analytics/history
+  Streamlit               Web application
+  uv                      Python environment/package management
+  Git/GitHub              Version control
 
-📁 Project Structure
+------------------------------------------------------------------------
 
+## 📁 Project Structure
+
+``` text
 DocuMind-AI/
 │
 ├── app.py
@@ -430,102 +518,132 @@ DocuMind-AI/
 │       └── classification_report.txt
 │
 └── data/
+```
 
-⚙️ Installation
+------------------------------------------------------------------------
 
-1. Clone the repository
+## ⚙️ Installation
 
-git clone https://github.com/YOUR_USERNAME/DocuMind-AI.git
+### 1. Clone the repository
+
+``` bash
+git clone https://github.com/aman-jakhar01/DocuMind-AI.git
 cd DocuMind-AI
+```
 
-2. Install uv
+### 2. Install uv
 
-If uv is not installed:
+If `uv` is not installed:
 
+``` bash
 pip install uv
+```
 
-3. Create the environment and install dependencies
+### 3. Create the environment and install dependencies
 
+``` bash
 uv sync
+```
 
-4. Configure Groq
+### 4. Configure Groq
 
-Create a .env file:
+Create a `.env` file:
 
+``` env
 GROQ_API_KEY=your_groq_api_key
+```
 
-Never commit .env or expose your API key publicly.
+Never commit `.env` or expose your API key publicly.
 
-5. Install Tesseract OCR
+### 5. Install Tesseract OCR
 
-Install Tesseract OCR separately on your operating system and make surethe executable is available to the application.
+Install Tesseract OCR separately on your operating system and make sure
+the executable is available to the application.
 
 Verify:
 
+``` bash
 tesseract --version
+```
 
-6. Initialize SQLite
+### 6. Initialize SQLite
 
+``` bash
 uv run python init_db.py
+```
 
-🚀 Run the Application
+------------------------------------------------------------------------
 
+## 🚀 Run the Application
+
+``` bash
 uv run streamlit run app.py
+```
 
 Open the local Streamlit URL shown in the terminal.
 
-🔄 How DocuMind Works
+------------------------------------------------------------------------
 
-1. Upload
+## 🔄 How DocuMind Works
+
+### 1. Upload
 
 The user uploads a PDF document through Streamlit.
 
-2. PDF Processing
+### 2. PDF Processing
 
 PyMuPDF converts the PDF into processable page images.
 
-3. Document Classification
+### 3. Document Classification
 
-The ResNet18 V2 model predicts the document category and returns thetop-3 predictions with confidence scores.
+The ResNet18 V2 model predicts the document category and returns the
+top-3 predictions with confidence scores.
 
-4. OCR
+### 4. OCR
 
 Tesseract extracts readable text from the document.
 
-5. Chunking and Embeddings
+### 5. Chunking and Embeddings
 
-The extracted text is divided into chunks and converted into semanticembeddings.
+The extracted text is divided into chunks and converted into semantic
+embeddings.
 
-6. Vector Search
+### 6. Vector Search
 
 Chroma stores and retrieves relevant document chunks.
 
-7. RAG
+### 7. RAG
 
 The retrieved context is provided to the Groq-powered LLM.
 
-8. AI Response
+### 8. AI Response
 
 DocuMind generates document-grounded summaries and answers questions.
 
-9. SQL Analytics
+### 9. SQL Analytics
 
 Document metadata and processing statistics are stored in SQLite.
 
-10. Dashboard
+### 10. Dashboard
 
-Streamlit displays classification results, OCR output, AI responses andanalytics.
+Streamlit displays classification results, OCR output, AI responses and
+analytics.
 
-🔐 Environment Variables
+------------------------------------------------------------------------
 
-Create .env:
+## 🔐 Environment Variables
 
+Create `.env`:
+
+``` env
 GROQ_API_KEY=your_groq_api_key
+```
 
 Do not commit secrets.
 
-Recommended .gitignore entries:
+Recommended `.gitignore` entries:
 
+``` gitignore
 .env
 .venv/
 __pycache__/
@@ -533,69 +651,63 @@ data/uploads/
 data/processed/
 data/chroma_db/
 data/documind.db
+```
 
-💡 Example Use Cases
+------------------------------------------------------------------------
 
-Document classification
+## 💡 Example Use Cases
 
-Invoice organization
+-   Document classification
+-   Invoice organization
+-   Resume screening
+-   Business document management
+-   Research document analysis
+-   Automated document search
+-   Knowledge-base Q&A
+-   Document summarization
+-   Intelligent document workflows
 
-Resume screening
+------------------------------------------------------------------------
 
-Business document management
+## ⚠️ Limitations
 
-Research document analysis
+-   Real-world documents may differ visually from the training
+    distribution.
+-   Classification confidence is not a calibrated probability.
+-   OCR quality depends on document resolution and image quality.
+-   Multi-page documents are currently classified using the first page
+    for the primary document type.
+-   LLM responses depend on the quality of retrieved OCR text.
 
-Automated document search
+------------------------------------------------------------------------
 
-Knowledge-base Q&A
+## 🔮 Future Improvements
 
-Document summarization
+-   Page-level document classification
+-   Confidence calibration
+-   Better OCR preprocessing
+-   Document layout-aware models
+-   Fine-tuning with larger datasets
+-   Advanced document table extraction
+-   Authentication and multi-user support
+-   Cloud deployment
+-   Model monitoring
+-   Automated evaluation pipeline
 
-Intelligent document workflows
+------------------------------------------------------------------------
 
-⚠️ Limitations
+## 👨‍💻 Author
 
-Real-world documents may differ visually from the trainingdistribution.
+**Aman Jakhar**
 
-Classification confidence is not a calibrated probability.
+Built as an end-to-end machine learning and generative AI portfolio
+project.
 
-OCR quality depends on document resolution and image quality.
-
-Multi-page documents are currently classified using the first pagefor the primary document type.
-
-LLM responses depend on the quality of retrieved OCR text.
-
-🔮 Future Improvements
-
-Page-level document classification
-
-Confidence calibration
-
-Better OCR preprocessing
-
-Document layout-aware models
-
-Fine-tuning with larger datasets
-
-Advanced document table extraction
-
-Authentication and multi-user support
-
-Cloud deployment
-
-Model monitoring
-
-Automated evaluation pipeline
-
-👨‍💻 Author
-
-Aman Jakhar
-
-Built as an end-to-end machine learning and generative AI portfolioproject.
+------------------------------------------------------------------------
 
 ::: {align="center"}
+### ⭐ If you find DocuMind AI useful, consider starring the repository!
 
-⭐ If you find DocuMind AI useful, consider starring the repository!
-
-<strong>{=html}PyTorch • OCR • RAG • Groq • Chroma • SQLite •Streamlit</strong>{=html}:::
+`<strong>`{=html}PyTorch • OCR • RAG • Groq • Chroma • SQLite •
+Streamlit`</strong>`{=html}
+:::
