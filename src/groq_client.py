@@ -1,8 +1,7 @@
 import os
 import streamlit as st
 from dotenv import load_dotenv
-from groq import ChatGroq
-
+from langchain_groq import ChatGroq
 load_dotenv()
 
 # Local .env
