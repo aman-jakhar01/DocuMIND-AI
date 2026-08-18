@@ -1,20 +1,25 @@
 import os
-
+import streamlit as st
 from dotenv import load_dotenv
-from langchain_groq import ChatGroq
+from groq import ChatGroq
 
 load_dotenv()
 
-api_key = os.getenv("GROQ_API_KEY")
+# Local .env
+GROQ_API_KEY = os.getenv("GROQ_API_KEY")
 
-if not api_key:
+# Streamlit Cloud
+if not GROQ_API_KEY:
+    GROQ_API_KEY = st.secrets.get("GROQ_API_KEY")
+
+if not GROQ_API_KEY:
     raise ValueError("GROQ_API_KEY is missing.")
 
 
 llm = ChatGroq(
     model="llama-3.3-70b-versatile",
     temperature=0,
-    api_key=api_key,
+    api_key=GROQ_API_KEY,
 )
 
 
