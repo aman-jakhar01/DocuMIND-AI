@@ -2,44 +2,37 @@ import sqlite3
 from pathlib import Path
 from datetime import datetime
 
-
-DB_PATH = Path("data/documind.db")
+# Resolve the database path relative to the project root (parent of src/).
+# If database.py is in src/database.py, this points to the project root.
+PROJECT_ROOT = Path(__file__).resolve().parent.parent
+DB_PATH = PROJECT_ROOT / "data" / "documind.db"
 
 
 def get_connection():
-    DB_PATH.parent.mkdir(
-        parents=True,
-        exist_ok=True
-    )
-
-    return sqlite3.connect(
-        DB_PATH
-    )
+    """Return a SQLite connection and ensure the database directory exists."""
+    DB_PATH.parent.mkdir(parents=True, exist_ok=True)
+    connection = sqlite3.connect(str(DB_PATH), timeout=30)
+    connection.row_factory = sqlite3.Row
+    return connection
 
 
 def initialize_database():
-
-    connection = get_connection()
-
-    cursor = connection.cursor()
-
-    cursor.execute(
-        """
-        CREATE TABLE IF NOT EXISTS documents (
-            id INTEGER PRIMARY KEY AUTOINCREMENT,
-            filename TEXT NOT NULL,
-            document_type TEXT NOT NULL,
-            confidence REAL NOT NULL,
-            pages INTEGER NOT NULL,
-            chunks INTEGER NOT NULL,
-            processing_time REAL,
-            created_at TEXT NOT NULL
+    """Create required database tables if they do not already exist."""
+    with get_connection() as connection:
+        connection.execute(
+            """
+            CREATE TABLE IF NOT EXISTS documents (
+                id INTEGER PRIMARY KEY AUTOINCREMENT,
+                filename TEXT NOT NULL,
+                document_type TEXT NOT NULL,
+                confidence REAL NOT NULL DEFAULT 0,
+                pages INTEGER NOT NULL DEFAULT 0,
+                chunks INTEGER NOT NULL DEFAULT 0,
+                processing_time REAL,
+                created_at TEXT NOT NULL
+            )
+            """
         )
-        """
-    )
-
-    connection.commit()
-    connection.close()
 
 
 def save_document(
@@ -48,112 +41,96 @@ def save_document(
     confidence,
     pages,
     chunks,
-    processing_time
+    processing_time,
 ):
+    """Save one processed document record."""
+    initialize_database()
 
-    connection = get_connection()
-
-    cursor = connection.cursor()
-
-    cursor.execute(
-        """
-        INSERT INTO documents (
-            filename,
-            document_type,
-            confidence,
-            pages,
-            chunks,
-            processing_time,
-            created_at
-        )
-        VALUES (?, ?, ?, ?, ?, ?, ?)
-        """,
-        (
-            filename,
-            document_type,
-            confidence,
-            pages,
-            chunks,
-            processing_time,
-            datetime.now().isoformat(
-                timespec="seconds"
+    with get_connection() as connection:
+        connection.execute(
+            """
+            INSERT INTO documents (
+                filename,
+                document_type,
+                confidence,
+                pages,
+                chunks,
+                processing_time,
+                created_at
+            )
+            VALUES (?, ?, ?, ?, ?, ?, ?)
+            """,
+            (
+                filename,
+                document_type,
+                float(confidence or 0),
+                int(pages or 0),
+                int(chunks or 0),
+                processing_time,
+                datetime.now().isoformat(timespec="seconds"),
             ),
         )
-    )
-
-    connection.commit()
-    connection.close()
 
 
 def get_documents():
+    """Return saved document records, newest first."""
+    initialize_database()
 
-    connection = get_connection()
+    with get_connection() as connection:
+        rows = connection.execute(
+            """
+            SELECT
+                id,
+                filename,
+                document_type,
+                confidence,
+                pages,
+                chunks,
+                processing_time,
+                created_at
+            FROM documents
+            ORDER BY id DESC
+            """
+        ).fetchall()
 
-    cursor = connection.cursor()
+    return [tuple(row) for row in rows]
 
-    cursor.execute(
-        """
-        SELECT
-            id,
-            filename,
-            document_type,
-            confidence,
-            pages,
-            chunks,
-            processing_time,
-            created_at
-        FROM documents
-        ORDER BY id DESC
-        """
-    )
 
-    rows = cursor.fetchall()
-
-    connection.close()
-
-    return rows
 def get_analytics():
+    """Return document totals, averages, and document-type distribution."""
+    initialize_database()
 
-    connection = get_connection()
+    with get_connection() as connection:
+        summary = connection.execute(
+            """
+            SELECT
+                COUNT(*) AS total_documents,
+                AVG(confidence) AS avg_confidence,
+                AVG(processing_time) AS avg_processing_time
+            FROM documents
+            """
+        ).fetchone()
 
-    cursor = connection.cursor()
-
-    cursor.execute(
-        """
-        SELECT
-            COUNT(*) AS total_documents,
-            AVG(confidence) AS avg_confidence,
-            AVG(processing_time) AS avg_processing_time
-        FROM documents
-        """
-    )
-
-    summary = cursor.fetchone()
-
-    cursor.execute(
-        """
-        SELECT
-            document_type,
-            COUNT(*) AS count
-        FROM documents
-        GROUP BY document_type
-        ORDER BY count DESC
-        """
-    )
-
-    distribution = cursor.fetchall()
-
-    connection.close()
+        distribution = connection.execute(
+            """
+            SELECT document_type, COUNT(*) AS count
+            FROM documents
+            GROUP BY document_type
+            ORDER BY count DESC
+            """
+        ).fetchall()
 
     return {
-        "total_documents": summary[0] or 0,
-        "avg_confidence": round(
-            summary[1] or 0,
-            2
-        ),
+        "total_documents": summary["total_documents"] or 0,
+        "avg_confidence": round(summary["avg_confidence"] or 0, 2),
         "avg_processing_time": round(
-            summary[2] or 0,
-            2
+            summary["avg_processing_time"] or 0, 2
         ),
-        "distribution": distribution,
+        "distribution": [
+            (row["document_type"], row["count"]) for row in distribution
+        ],
     }
+
+
+# Ensure the schema exists as soon as this module is imported.
+initialize_database()
